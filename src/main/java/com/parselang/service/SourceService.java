@@ -1,8 +1,10 @@
 package com.parselang.service;
 
-import com.parselang.entity.SourceText;
+import com.parselang.entity.Source;
 
 public interface SourceService {
 
-    void save(SourceText sourceText);
+    void save(Source source);
+
+    Source findByName(String name);
 }

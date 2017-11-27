@@ -1,12 +1,12 @@
 package com.parselang.service;
 
-import com.parselang.entity.SourceText;
+import com.parselang.entity.Source;
 import com.parselang.repository.SourceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SourceServiceImpl implements SourceService{
+public class SourceServiceImpl implements SourceService {
 
     private final SourceRepository sourceRepository;
 
@@ -16,7 +16,12 @@ public class SourceServiceImpl implements SourceService{
     }
 
     @Override
-    public void save(SourceText sourceText) {
-        sourceRepository.save(sourceText);
+    public void save(Source source) {
+        sourceRepository.save(source);
+    }
+
+    @Override
+    public Source findByName(String name) {
+        return sourceRepository.findByName(name);
     }
 }
